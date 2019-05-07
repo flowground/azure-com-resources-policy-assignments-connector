@@ -1,0 +1,121 @@
+{
+    "type": "object",
+    "properties": {
+        "policyAssignmentId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The policy assignment.",
+            "properties": {
+                "id": {
+                    "description": "The ID of the policy assignment.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "identity": {
+                    "description": "The managed identity associated with the policy assignment.",
+                    "properties": {
+                        "principalId": {
+                            "description": "The principal ID of the resource identity.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "tenantId": {
+                            "description": "The tenant ID of the resource identity.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "type": {
+                            "description": "The identity type.",
+                            "enum": [
+                                "SystemAssigned",
+                                "None"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": false,
+                                "name": "ResourceIdentityType"
+                            }
+                        }
+                    },
+                    "type": "object"
+                },
+                "location": {
+                    "description": "The location of the policy assignment. Only required when utilizing managed identity.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the policy assignment.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "properties": {
+                    "description": "Properties for the policy assignment.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "description": {
+                            "description": "This message will be part of response in case of policy violation.",
+                            "type": "string"
+                        },
+                        "displayName": {
+                            "description": "The display name of the policy assignment.",
+                            "type": "string"
+                        },
+                        "metadata": {
+                            "description": "The policy assignment metadata.",
+                            "type": "object"
+                        },
+                        "notScopes": {
+                            "description": "The policy's excluded scopes.",
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "parameters": {
+                            "description": "Required if a parameter is used in policy rule.",
+                            "type": "object"
+                        },
+                        "policyDefinitionId": {
+                            "description": "The ID of the policy definition or policy set definition being assigned.",
+                            "type": "string"
+                        },
+                        "scope": {
+                            "description": "The scope for the policy assignment.",
+                            "type": "string"
+                        }
+                    }
+                },
+                "sku": {
+                    "description": "The policy sku. This property is optional, obsolete, and will be ignored.",
+                    "properties": {
+                        "name": {
+                            "description": "The name of the policy sku. Possible values are A0 and A1.",
+                            "type": "string"
+                        },
+                        "tier": {
+                            "description": "The policy sku tier. Possible values are Free and Standard.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "description": "The type of the policy assignment.",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "x-ms-azure-resource": true,
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
