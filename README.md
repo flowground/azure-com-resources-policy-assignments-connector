@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the PolicyClient API (version 2018-05-01).
 
 Generated from: https://api.apis.guru/v2/specs/azure.com/resources-policyAssignments/2018-05-01/swagger.json<br/>
-Generated at: 2019-05-07T17:38:46+03:00
+Generated at: 2019-06-11T18:14:12+03:00
 
 ## API Description
 
